@@ -1,0 +1,26 @@
+#' The application server-side
+#' 
+#' @param input,output,session Internal parameters for {shiny}. 
+#'     DO NOT REMOVE.
+#' @import shiny
+#' @noRd
+app_server <- function( input, output, session ) {
+  # Your application server logic 
+  
+  sidebar_selected <- c()
+  
+  vals <- reactiveValues(sidebar_selected = sidebar_selected)
+  
+  mod_sidebar_server("sidebar_ui_1")
+  
+  observeEvent(vals$sidebar_selected,{
+    
+    if (sum("database" == vals$sidebar_selected)==1) {
+      
+      mod_database_server("database_ui_1")
+      
+      vals$sidebar_selected <- c(vals$sidebar_selected,"database")
+    }
+    
+  })
+}

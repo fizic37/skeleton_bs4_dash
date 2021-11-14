@@ -1,0 +1,9 @@
+default:
+  golem_name: Bs4Skeleton
+  golem_version: 0.0.0.9000
+  app_prod: no
+production:
+  app_prod: yes
+dev:
+  golem_wd: C:/Marius Tita/OLD/marius/backup 27.11.2007/my doc/Directia administr.
+    riscuri/Analize Risc/Web Plafon R/Risk applications/Bs4Skeleton
